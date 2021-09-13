@@ -7,6 +7,8 @@ public class TDPlayerController : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
     [SerializeField]
+    private float movementVelocity = 3f;
+    [SerializeField]
     private Transform bulletDirection;
     private TDActions controls;
     private bool canShoot = true;
@@ -59,11 +61,16 @@ public class TDPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Rotation
         Vector2 mouseScreenPosition = controls.Player.MousePosition.ReadValue<Vector2>();
         Vector3 mouseWorldPosition = main.ScreenToWorldPoint(mouseScreenPosition);
         Vector3 targetDirection = mouseWorldPosition - transform.position;
         float angle = Mathf.Atan2(targetDirection.y, targetDirection.x);
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+
+        // Movement
+        Vector3 movement = controls.Player.Movement.ReadValue<Vector2>() * movementVelocity;
+        transform.position += movement * Time.deltaTime;
     }
 
 
