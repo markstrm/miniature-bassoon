@@ -53,7 +53,7 @@ public class TDPlayerController : MonoBehaviour
     IEnumerator CanShoot()
     {
         canShoot = false;
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.1f);
         canShoot = true;
     }
 
@@ -65,8 +65,8 @@ public class TDPlayerController : MonoBehaviour
         Vector2 mouseScreenPosition = controls.Player.MousePosition.ReadValue<Vector2>();
         Vector3 mouseWorldPosition = main.ScreenToWorldPoint(mouseScreenPosition);
         Vector3 targetDirection = mouseWorldPosition - transform.position;
-        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x);
-        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle - 90));
 
         // Movement
         Vector3 movement = controls.Player.Movement.ReadValue<Vector2>() * movementVelocity;
