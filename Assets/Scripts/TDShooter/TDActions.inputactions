@@ -6,16 +6,8 @@
             "id": "85b38da1-26ce-49e8-bfb0-d744c85b36a6",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "2196a32a-1565-4958-8d5e-71f1576f2f71",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Shoot",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "32800bff-e15d-47ec-8759-e71db6694ac6",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -39,17 +31,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "1d367a6e-a1d7-4704-9781-ef8826f7ef3e",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "6dd12746-544b-402f-a84d-dcb4d331c42f",
