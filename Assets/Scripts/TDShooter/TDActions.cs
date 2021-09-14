@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/scripts/TDShooter/TDActions.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/TDShooter/TDActions.inputactions'
 
 using System;
 using System.Collections;
