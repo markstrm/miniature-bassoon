@@ -53,7 +53,7 @@ public class TDPlayerController : MonoBehaviour
     IEnumerator CanShoot()
     {
         canShoot = false;
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.2f);
         canShoot = true;
     }
 
