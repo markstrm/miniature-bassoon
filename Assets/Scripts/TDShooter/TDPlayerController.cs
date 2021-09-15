@@ -14,6 +14,7 @@ public class TDPlayerController : MonoBehaviour
     private bool canShoot = true;
     private Camera main;
 
+
     private void Awake()
     {
         controls = new TDActions();

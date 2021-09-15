@@ -5,8 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
 
-    [SerializeField]
-    private float speed = 4f;
+    [SerializeField] private float speed = 4f;
 
     IEnumerator DestroyBulletAfterTime()
     {
