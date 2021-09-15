@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class TDPlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject bullet;
-    [SerializeField]
-    private float movementVelocity = 3f;
-    [SerializeField]
-    private Transform bulletDirection;
+    [Header("Player")]
+    [SerializeField] private float movementVelocity = 3f;
+
+    [Header("Laser")]
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private Transform bulletDirection;
+
     private TDActions controls;
     private bool canShoot = true;
     private Camera main;
@@ -18,8 +19,6 @@ public class TDPlayerController : MonoBehaviour
     private void Awake()
     {
         controls = new TDActions();
-
-        
     }
 
     private void OnEnable()
@@ -72,7 +71,9 @@ public class TDPlayerController : MonoBehaviour
         // Movement
         Vector3 movement = controls.Player.Movement.ReadValue<Vector2>() * movementVelocity;
         transform.position += movement * Time.deltaTime;
-    }
+
+
+}
 
 
 }
