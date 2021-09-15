@@ -15,7 +15,6 @@ public class EnemyLaser : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         Vector2 moveDir = (target.transform.position - transform.position).normalized;
         bulletRB.velocity = moveDir * speed;
-        Destroy(this.gameObject, 2);
 
         transform.eulerAngles = new Vector3(0, 0, Vector2ToAngle(moveDir) - 90f);
     }

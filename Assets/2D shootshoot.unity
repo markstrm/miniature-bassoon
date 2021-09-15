@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.49780262, g: 0.49780262, b: 0.49780262, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1095,8 +1095,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  lineOfSight: 6.88
-  shootingRange: 3.81
+  lineOfSight: 6.82
+  shootingRange: 4.13
   FireRate: 1
   bullet: {fileID: 689348596365392242, guid: 8e353a64e2c3c4c45a13cc9a79d3fc66, type: 3}
   bulletParent: {fileID: 1808389981}
