@@ -29,7 +29,7 @@ public class EnemyAI : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
         }
-        else if (distanceFromPlayer < shootingRange)
+        if (distanceFromPlayer < shootingRange && nextFireTime < Time.time)//Why wont you shoot when moving??
         {
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
             nextFireTime = Time.time + FireRate;
