@@ -13,14 +13,21 @@ public class EnemyLaser : MonoBehaviour
     {
         bulletRB = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
-        Vector2 moveDir = (target.transform.position - transform.position).normalized * speed;
-        bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
+        Vector2 moveDir = (target.transform.position - transform.position).normalized;
+        bulletRB.velocity = moveDir * speed;
         Destroy(this.gameObject, 2);
+
+        transform.eulerAngles = new Vector3(0, 0, Vector2ToAngle(moveDir) - 90f);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public static float Vector2ToAngle(Vector2 vect)
+    {
+        return Mathf.Atan2(vect.y, vect.x) * Mathf.Rad2Deg;
     }
 }
