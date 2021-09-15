@@ -6,7 +6,6 @@ public class TDPlayerController : MonoBehaviour
 {
     [Header("Player")]
     [SerializeField] private float movementVelocity = 3f;
-    [SerializeField] int health = 200;
 
     [Header("Laser")]
     [SerializeField] private GameObject bullet;
@@ -58,6 +57,7 @@ public class TDPlayerController : MonoBehaviour
         canShoot = true;
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -71,22 +71,10 @@ public class TDPlayerController : MonoBehaviour
         // Movement
         Vector3 movement = controls.Player.Movement.ReadValue<Vector2>() * movementVelocity;
         transform.position += movement * Time.deltaTime;
-        }
 
-    private void OnTriggerEnter2D(Collider2D other)
-   {
-       DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
-       ProcessHit(damageDealer);
-   }
 
-    private void ProcessHit(DamageDealer damageDealer)
-    {
-       health -= damageDealer.GetDamage();
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+}
+
 
 }
 

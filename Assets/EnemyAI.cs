@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] float health = 100;
     public float speed;
     public float lineOfSight;
     public float shootingRange;
@@ -30,25 +29,10 @@ public class EnemyAI : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
         }
-        if (distanceFromPlayer < shootingRange && nextFireTime < Time.time)
+        if (distanceFromPlayer < shootingRange && nextFireTime < Time.time)//Why wont you shoot when moving??
         {
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
             nextFireTime = Time.time + FireRate;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
-        ProcessHit(damageDealer);
-    }
-
-    private void ProcessHit(DamageDealer damageDealer)
-    {
-        health -= damageDealer.GetDamage();
-        if (health <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 
