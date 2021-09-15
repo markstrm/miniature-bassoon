@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
     public float speed;
     public float lineOfSight;
     public float shootingRange;
+    public float stationaryRange;
     public float FireRate = 1;
     private float nextFireTime;
     public GameObject bullet;
@@ -24,17 +25,15 @@ public class EnemyAI : MonoBehaviour
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         RotateTowards(player.position);
-        if (distanceFromPlayer < lineOfSight && distanceFromPlayer > shootingRange)
+        if (distanceFromPlayer < lineOfSight && distanceFromPlayer > stationaryRange)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
         }
-        else if (distanceFromPlayer <= shootingRange && nextFireTime < Time.time)
+        else if (distanceFromPlayer < shootingRange)
         {
-
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
             nextFireTime = Time.time + FireRate;
         }
-
     }
 
     private void RotateTowards(Vector2 target)
@@ -50,6 +49,7 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, lineOfSight);
+        Gizmos.DrawWireSphere(transform.position, stationaryRange);
         Gizmos.DrawWireSphere(transform.position, shootingRange);
     }
 }
