@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 99607828}
   - component: {fileID: 99607830}
   - component: {fileID: 99607831}
+  - component: {fileID: 99607832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -296,6 +297,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49500006
+--- !u!50 &99607832
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99607827}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &155338375
 GameObject:
   m_ObjectHideFlags: 3
@@ -454,7 +476,7 @@ GameObject:
   - component: {fileID: 282248884}
   - component: {fileID: 282248885}
   m_Layer: 0
-  m_Name: meteor_detailedLarge
+  m_Name: asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -539,7 +561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Hitpoints: 0
   _MaxHitpoints: 2
-  _RotationSpeed: 0
+  _RotationSpeed: 35
   _ClockwiseRotation: 0
 --- !u!50 &282248884
 Rigidbody2D:
@@ -553,7 +575,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
