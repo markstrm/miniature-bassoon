@@ -23,13 +23,14 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+        RotateTowards(player.position);
         if (distanceFromPlayer < lineOfSight && distanceFromPlayer > shootingRange)
         {
-            RotateTowards(player.position);
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
         }
         else if (distanceFromPlayer <= shootingRange && nextFireTime < Time.time)
         {
+
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
             nextFireTime = Time.time + FireRate;
         }
