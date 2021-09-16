@@ -81,7 +81,8 @@ public class TDPlayerController : MonoBehaviour
 
     private void ProcessHit(DamageDealer damageDealer)
     {
-       health -= damageDealer.GetDamage();
+        health -= damageDealer.GetDamage();
+        damageDealer.Hit();
         if (health <= 0)
         {
             Destroy(gameObject);

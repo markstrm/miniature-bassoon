@@ -20,18 +20,19 @@ public class BulletController : MonoBehaviour
         transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        var enemy = other.GetComponent<Asteroids>();
+        if (enemy)
+        {
+            enemy.TakeHit(1);
+        }
         Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        var enemy = collision.collider.GetComponent<Asteroids>();
-        if (enemy)
-        {
-            enemy.TakeHit(1);
-        }
+        
         Destroy(gameObject);
     }
 }
