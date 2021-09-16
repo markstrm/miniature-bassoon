@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   deathVFX: {fileID: 3644796759415655205, guid: b87ef5c8480b14c41943b9d419821d21, type: 3}
-  durationOfExplosion: 0.05
+  durationOfExplosion: 0.3
   speed: 5
   lineOfSight: 9.64
   shootingRange: 6.37

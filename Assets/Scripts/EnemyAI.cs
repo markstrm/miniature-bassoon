@@ -60,7 +60,7 @@ public class EnemyAI : MonoBehaviour
     {
         Destroy(gameObject);
         GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
-        Destroy(explosion, 1f);
+        Destroy(explosion, durationOfExplosion);
     }
 
     private void RotateTowards(Vector2 target)
