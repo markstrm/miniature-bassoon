@@ -47,7 +47,6 @@ public class EnemyAI : MonoBehaviour
 
     private void ProcessHit(DamageDealer damageDealer)
     {
-        Debug.Log("Enemy hit");
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
         if (health <= 0)
